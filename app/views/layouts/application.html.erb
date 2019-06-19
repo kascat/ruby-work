@@ -1,14 +1,25 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>App</title>
+  <title>Lista de Compras</title>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
 </head>
 <body>
 
-<%= yield %>
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <%= link_to 'Organize suas listas', root_path, class: 'navbar-brand' %>
+  <div class="collapse navbar-collapse justify-content-end">
+    <div class="navbar-nav">
+      <%= link_to 'Nova lista', '#', class: 'btn btn-primary' %>
+    </div>
+  </div>
+</nav>
+
+<main class="container" role="main">
+  <%= yield %>
+</main>
 
 </body>
 </html>
