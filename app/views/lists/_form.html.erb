@@ -1,17 +1,26 @@
 <hr>
 
-<%= simple_form_for(@list) do |f| %>
-  <%= f.error_notification %>
+  <%= simple_form_for(@list) do |f| %>
+    <%= f.error_notification %>
 
-  <div class="form-inputs">
-    <%= f.input :title, label: 'Título', error: 'Preencha corretamente o título' %>
-    <%= f.input :description, label: 'Descrição', error: 'Preencha a descrição' %>
-    <%= f.input :bought, label: 'Comprada' %>
-  </div>
+    <div class="form-inputs">
+      <%= f.input :title, label: 'Título', error: 'Preencha corretamente o título' %>
+      <%= f.input :description, label: 'Descrição', error: 'Preencha a descrição' %>
+      <%= f.input :bought, label: 'Comprada' %>
+    </div>
 
-  <div class="form-actions">
-    <button class="btn btn-success" type='submit'>Salvar</button>
-  </div>
-<% end %>
+    <div class="fields">
+      <h4><%= link_to_add_fields "Adicionar item", f, :items %></h4>
+
+      <%= f.fields_for :items do |builder| %>
+        <%= render "item_fields", f: builder %>
+      <% end %>
+    </div>
+
+    <div class="form-actions">
+      <button class="btn btn-success" type='submit'>Salvar</button>
+    </div>
+
+  <% end %>
 
 <hr>
