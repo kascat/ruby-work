@@ -12,12 +12,12 @@
   <%= link_to 'Organize suas listas', root_path, class: 'navbar-brand' %>
   <div class="collapse navbar-collapse justify-content-end">
     <div class="navbar-nav">
-      <%= link_to 'Nova lista', '#', class: 'btn btn-primary' %>
+      <%= link_to 'Nova lista', new_list_path, class: 'btn btn-primary', role: :button %>
     </div>
   </div>
 </nav>
 
-<main class="container" role="main">
+<main class="container" role="main" style="padding-top:8px">
   <% flash.each do |key, value| %>
     <div class="<%= flash_class(key) %> alert-dismissible fade show" role="alert">
       <%= value %>

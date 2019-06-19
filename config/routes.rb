@@ -1,8 +1,8 @@
 Rails.application.routes.draw do
   resources :lists
-  get 'list/index'
+  get 'lists/index'
 
-  root 'list#index'
+  root 'lists#index'
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
